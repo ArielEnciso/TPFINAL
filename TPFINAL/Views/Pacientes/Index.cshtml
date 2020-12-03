@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<TPFINAL.Models.Pacientes>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Registro de Pacientes";
 }
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Registrar Nuevo", "Create")
 </p>
 <table class="table">
     <tr>
@@ -59,9 +59,9 @@
             @Html.DisplayFor(modelItem => item.Sexo)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Nº_HistorialClinico }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Nº_HistorialClinico }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Nº_HistorialClinico })
+            @Html.ActionLink("Editar", "Edit", new { id=item.Nº_HistorialClinico }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.Nº_HistorialClinico }) |
+            @Html.ActionLink("Borrar", "Delete", new { id=item.Nº_HistorialClinico })
         </td>
     </tr>
 }
