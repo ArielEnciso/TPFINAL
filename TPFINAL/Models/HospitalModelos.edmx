@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="HospitalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Ingreso">
+          <Key>
+            <PropertyRef Name="NumIngreso" />
+          </Key>
+          <Property Name="NumIngreso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NumeroHistorial" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="FechaIngreso" Type="date" />
+          <Property Name="CodIdentificacion" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="NumSala" Type="int" Nullable="false" />
+          <Property Name="NumCama" Type="int" Nullable="false" />
+          <Property Name="EnfermedadBase" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Medicos">
+          <Key>
+            <PropertyRef Name="Cod_Identificacion" />
+          </Key>
+          <Property Name="Cod_Identificacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre_Medico" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido_Medico" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Especialidad" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Fecha_Ingreso" Type="date" Nullable="false" />
+          <Property Name="Cargo" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pacientes">
+          <Key>
+            <PropertyRef Name="Nº HistorialClinico" />
+          </Key>
+          <Property Name="AseguradoNº" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Apellido" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Domicilio" Type="varchar" MaxLength="50" />
+          <Property Name="Ciudad" Type="varchar" MaxLength="50" />
+          <Property Name="Telefono" Type="varchar" MaxLength="50" />
+          <Property Name="Nº HistorialClinico" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sexo" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="HospitalModelStoreContainer">
+          <EntitySet Name="Ingreso" EntityType="Self.Ingreso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medicos" EntityType="Self.Medicos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pacientes" EntityType="Self.Pacientes" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HospitalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Ingreso">
+          <Key>
+            <PropertyRef Name="NumIngreso" />
+          </Key>
+          <Property Name="NumIngreso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NumeroHistorial" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FechaIngreso" Type="DateTime" Precision="0" />
+          <Property Name="CodIdentificacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NumSala" Type="Int32" Nullable="false" />
+          <Property Name="NumCama" Type="Int32" Nullable="false" />
+          <Property Name="EnfermedadBase" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Medicos">
+          <Key>
+            <PropertyRef Name="Cod_Identificacion" />
+          </Key>
+          <Property Name="Cod_Identificacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre_Medico" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido_Medico" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Especialidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Fecha_Ingreso" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pacientes">
+          <Key>
+            <PropertyRef Name="Nº_HistorialClinico" />
+          </Key>
+          <Property Name="AseguradoNº" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Domicilio" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Ciudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Nº_HistorialClinico" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sexo" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="HospitalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ingreso" EntityType="Self.Ingreso" />
+          <EntitySet Name="Medicos" EntityType="Self.Medicos" />
+          <EntitySet Name="Pacientes" EntityType="Self.Pacientes" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HospitalModelStoreContainer" CdmEntityContainer="HospitalEntities">
+          <EntitySetMapping Name="Ingreso">
+            <EntityTypeMapping TypeName="HospitalModel.Ingreso">
+              <MappingFragment StoreEntitySet="Ingreso">
+                <ScalarProperty Name="NumIngreso" ColumnName="NumIngreso" />
+                <ScalarProperty Name="NumeroHistorial" ColumnName="NumeroHistorial" />
+                <ScalarProperty Name="FechaIngreso" ColumnName="FechaIngreso" />
+                <ScalarProperty Name="CodIdentificacion" ColumnName="CodIdentificacion" />
+                <ScalarProperty Name="NumSala" ColumnName="NumSala" />
+                <ScalarProperty Name="NumCama" ColumnName="NumCama" />
+                <ScalarProperty Name="EnfermedadBase" ColumnName="EnfermedadBase" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medicos">
+            <EntityTypeMapping TypeName="HospitalModel.Medicos">
+              <MappingFragment StoreEntitySet="Medicos">
+                <ScalarProperty Name="Cod_Identificacion" ColumnName="Cod_Identificacion" />
+                <ScalarProperty Name="Nombre_Medico" ColumnName="Nombre_Medico" />
+                <ScalarProperty Name="Apellido_Medico" ColumnName="Apellido_Medico" />
+                <ScalarProperty Name="Especialidad" ColumnName="Especialidad" />
+                <ScalarProperty Name="Fecha_Ingreso" ColumnName="Fecha_Ingreso" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pacientes">
+            <EntityTypeMapping TypeName="HospitalModel.Pacientes">
+              <MappingFragment StoreEntitySet="Pacientes">
+                <ScalarProperty Name="AseguradoNº" ColumnName="AseguradoNº" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="Domicilio" ColumnName="Domicilio" />
+                <ScalarProperty Name="Ciudad" ColumnName="Ciudad" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Nº_HistorialClinico" ColumnName="Nº HistorialClinico" />
+                <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
