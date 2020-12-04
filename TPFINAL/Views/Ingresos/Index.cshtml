@@ -1,0 +1,61 @@
+﻿@model IEnumerable<TPFINAL.Models.Ingreso>
+
+@{
+    ViewBag.Title = "Registro ingreso";
+}
+
+<h2>Registro Ingreso</h2>
+
+<p>
+    @Html.ActionLink("Registrar ingreso", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroHistorial)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FechaIngreso)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CodIdentificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumSala)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumCama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EnfermedadBase)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroHistorial)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaIngreso)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CodIdentificacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumSala)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumCama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EnfermedadBase)
+        </td>
+        <td>
+            @Html.ActionLink("Ver detalles", "Details", new { id=item.NumIngreso })
+        </td>
+    </tr>
+}
+
+</table>

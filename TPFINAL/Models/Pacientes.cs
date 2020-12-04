@@ -11,15 +11,18 @@ namespace TPFINAL.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Pacientes
     {
+        [Display(Name = "Número de Asegurado")]
         public int AseguradoNº { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
         public string Domicilio { get; set; }
         public string Ciudad { get; set; }
         public string Telefono { get; set; }
+        [Display(Name = "Historial Clínico")]
         public string Nº_HistorialClinico { get; set; }
         public Nullable<bool> Sexo { get; set; }
     }

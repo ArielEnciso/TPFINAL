@@ -1,31 +1,33 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Hospital Tekuro Yamismito - Inicio";
 }
 
     <div class="jumbotron">
-        <h1>Hospital Tekuro Yamismito</h1>
-        <div style="text-align: right;"><img src="../../TekuroYamismito.jpg" alt="imagen"> </div>
-<p class="lead">Nuestra prioridad es curarte ya mismo</p>
+        <div class="row">
+            <div class="col-md-9">
+                <br>
+                <h1>Hospital Tekuro Yamismito</h1>
+                <p class="lead">Nuestra prioridad es curarte ya mismo</p>
+            </div>
+            <div class="col-md-3" style="text-align: left;"><img src="../../TekuroYamismito.jpg" alt="imagen"> </div>
+        </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-6">
-            <h2>Registro de Pacientes</h2>
-            <p>
-                Registrar a los pacientes de forma rapida y sencilla.
-            </p>
-
-        </div>
-        <div class="col-md-6">
-            <h2>Consulte los Doctores del Hospital</h2>
-            <p>Contamos con algunos de los mejores doctores en las diferentes ramas de la medicina moderna</p>
-            <img src="../../DrNosborn.jpg">
-            <p><strong>Dr. Nosborn</strong></p><em>Todo un Galan</em>
-            
-        </div>
-        
-
+<div class="row">
+    <div class="col-md-6">
+        <h2>Registro de Pacientes</h2>
+        <p>
+            Registrar a los pacientes de forma rapida y sencilla.
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h2>Consulte los Doctores del Hospital</h2>
+        <p>Contamos con algunos de los mejores doctores en las diferentes ramas de la medicina moderna</p>
+        <p><a class="btn btn-link">@Html.ActionLink("Ir a nómina ", "Medicos", "Api")</a></p>
     </div>
 
-    
+
+</div>
+
+
 </div>

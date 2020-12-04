@@ -1,0 +1,72 @@
+﻿@model TPFINAL.Models.Ingreso
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Ingreso</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroHistorial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroHistorial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaIngreso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaIngreso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodIdentificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodIdentificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumSala)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumSala)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumCama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumCama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnfermedadBase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnfermedadBase)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

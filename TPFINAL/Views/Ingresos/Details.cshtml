@@ -1,0 +1,66 @@
+﻿@model TPFINAL.Models.Ingreso
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ingreso</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroHistorial)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroHistorial)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FechaIngreso)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FechaIngreso)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CodIdentificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CodIdentificacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumSala)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumSala)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumCama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumCama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EnfermedadBase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EnfermedadBase)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NumIngreso }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -27,6 +27,7 @@
                     @if (Request.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Pacientes", "Index", "Pacientes")</li>
+                        <li>@Html.ActionLink("Ingresos", "Index", "Ingresos")</li>
                     }
                 </ul>
                 @Html.Partial("_LoginPartial")
