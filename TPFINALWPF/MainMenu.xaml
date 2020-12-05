@@ -1,0 +1,27 @@
+﻿<Window x:Class="TPFINALWPF.MainMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TPFINALWPF"
+        mc:Ignorable="d"
+        Title="MainMenu" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="21*"/>
+            <ColumnDefinition Width="67*"/>
+        </Grid.ColumnDefinitions>
+        <Menu HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="772" Grid.ColumnSpan="2">
+            <MenuItem x:Name="menuPpalPacientes" Header="Pacientes" Height="39" Width="193" FontFamily="Consolas" FontWeight="Bold" FontStyle="Italic">
+                <MenuItem x:Name="menuPacientes" Header="Carga de Pacientes" Height="51" Click="menuPacientes_Click" Margin="0,0,-17,0" RenderTransformOrigin="0.612,2.059" HorizontalAlignment="Left" Width="204"/>
+            </MenuItem>
+            <MenuItem x:Name="menuPpalMedicos" Header="Medicos" Height="39" Width="193" FontFamily="Consolas" FontWeight="Bold" FontStyle="Italic">
+                <MenuItem x:Name="menuMedicos" Header="Carga de Medicos" Height="51" Margin="0,0,-17,0" RenderTransformOrigin="0.612,2.059" HorizontalAlignment="Left" Width="204"/>
+            </MenuItem>
+            <MenuItem x:Name="menuPpalIngresos" Header="Ingreso de pacientes" Height="39" Width="193" FontFamily="Consolas" FontWeight="Bold" FontStyle="Italic">
+                <MenuItem x:Name="menuIngresos" Header="Carga de Ingresos" Height="51" Margin="0,0,-17,0" RenderTransformOrigin="0.612,2.059" HorizontalAlignment="Left" Width="204"/>
+            </MenuItem>
+        </Menu>
+
+    </Grid>
+</Window>
